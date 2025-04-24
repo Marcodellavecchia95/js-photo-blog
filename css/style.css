@@ -20,6 +20,12 @@ body {
 
 .card {
   border-radius: 0;
+  position: relative;
+}
+
+.pin-image {
+  position: absolute;
+  left: 45%;
 }
 
 @media (min-width: 576px) {
