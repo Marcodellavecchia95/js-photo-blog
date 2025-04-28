@@ -10,10 +10,9 @@ axios.get(apiUri).then((response) => {
             <img class="pin-image" src="./img/pin.svg" alt="">
               <img src="${image.url}" class="card-img-top p-3" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">${image.title}</h5>
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                 ${image.date}
                 </p>
               </div>
             </div>
