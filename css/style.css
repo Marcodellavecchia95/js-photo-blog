@@ -48,15 +48,22 @@ p {
   inset: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.card {
+.card:hover {
   cursor: pointer;
+  transform: rotate(10deg) scale(1.2) translateX(15px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.overlay img {
+  width: 40%;
 }
 
 @media (min-width: 576px) {
