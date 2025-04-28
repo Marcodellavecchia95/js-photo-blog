@@ -55,6 +55,10 @@ p {
   flex-direction: column;
 }
 
+.card {
+  cursor: pointer;
+}
+
 @media (min-width: 576px) {
   .col-sm-12 {
     flex: 0 0 auto;

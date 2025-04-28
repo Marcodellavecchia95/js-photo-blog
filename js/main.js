@@ -1,6 +1,10 @@
 const apiUri = `https://lanciweb.github.io/demo/api/pictures/`;
 const imageGroupEl = document.getElementById("image-group");
 const colGeneratorEl = document.getElementById("col-generator");
+const buttonEL = document.getElementById("button");
+
+const overlayEl = document.querySelector(".overlay");
+
 axios.get(apiUri).then((response) => {
   const imageArray = response.data;
   console.log(imageArray[0].url);
@@ -18,4 +22,14 @@ axios.get(apiUri).then((response) => {
             </div>
           </div>`;
   }
+  const generatedCards = document.querySelectorAll(".card");
+  generatedCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      overlayEl.classList.remove("d-none");
+    });
+  });
+});
+
+buttonEL.addEventListener("click", () => {
+  overlayEl.classList.add("d-none");
 });
