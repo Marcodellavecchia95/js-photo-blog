@@ -1,7 +1,6 @@
 const apiUri = `https://lanciweb.github.io/demo/api/pictures/`;
 const imageGroupEl = document.getElementById("image-group");
 const colGeneratorEl = document.getElementById("col-generator");
-const buttonEL = document.getElementById("button");
 
 const overlayEl = document.querySelector(".overlay");
 
@@ -25,11 +24,16 @@ axios.get(apiUri).then((response) => {
   const generatedCards = document.querySelectorAll(".card");
   generatedCards.forEach((card) => {
     card.addEventListener("click", () => {
+      const cardImage = card.querySelector(".card-img-top");
+      console.log(cardImage);
       overlayEl.classList.remove("d-none");
+      overlayEl.innerHTML = ` <button id="button" class="btn btn-danger mb-5">CHIUDI</button>
+                                <img src="${cardImage.src}"  alt="..." />`;
+
+      const buttonEL = document.getElementById("button");
+      buttonEL.addEventListener("click", () => {
+        overlayEl.classList.add("d-none");
+      });
     });
   });
-});
-
-buttonEL.addEventListener("click", () => {
-  overlayEl.classList.add("d-none");
 });
